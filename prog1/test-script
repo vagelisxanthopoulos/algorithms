@@ -1,0 +1,23 @@
+#!/bin/bash
+echo FIRST
+x=1
+while [ $x -le 28 ]
+do
+  cat ./teleports2/output$x.txt
+  time ./teleports <./teleports2/input$x.txt
+  echo 
+  echo
+  x=$(( $x + 1 ))
+done
+echo 
+echo
+echo SECOND
+x=1
+while [ $x -le 25 ]
+do
+  cat ./shops2/output$x.txt
+  time ./shops-best <./shops2/input$x.txt
+  echo 
+  echo
+  x=$(( $x + 1 ))
+done

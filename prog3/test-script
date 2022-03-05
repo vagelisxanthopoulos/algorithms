@@ -1,0 +1,11 @@
+#!/bin/bash
+echo FIRST
+x=0
+while [ $x -le 20 ]
+do
+  time ./train <traintrips/input$x.txt >output.txt
+  diff -sq output.txt traintrips/output$x.txt
+  echo 
+  echo
+  x=$(( $x + 1 ))
+done

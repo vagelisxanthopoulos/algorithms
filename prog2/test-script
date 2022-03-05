@@ -1,0 +1,26 @@
+#!/bin/bash
+echo FIRST
+echo
+x=1
+while [ $x -le 25 ]
+do
+  cat ./salaries-testcases/output$x.txt
+  time ./salaries <./salaries-testcases/input$x.txt
+  echo 
+  echo
+  x=$(( $x + 1 ))
+done
+echo 
+echo
+echo
+echo SECOND
+echo
+x=0
+while [ $x -le 19 ]
+do
+  cat ./bazaar-testcases/output$x.txt
+  time ./bazaar <./bazaar-testcases/input$x.txt
+  echo 
+  echo
+  x=$(( $x + 1 ))
+done
