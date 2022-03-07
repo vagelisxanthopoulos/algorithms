@@ -9,3 +9,16 @@ do
   echo
   x=$(( $x + 1 ))
 done
+echo 
+echo
+echo
+echo SECOND
+x=1
+while [ $x -le 20 ]
+do
+  time ./road <roadtrip/input$x.txt >output.txt
+  diff -sq output.txt roadtrip/output$x.txt
+  echo 
+  echo
+  x=$(( $x + 1 ))
+done
